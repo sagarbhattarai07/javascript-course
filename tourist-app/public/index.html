@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tourist App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Tourist App</h1>
+    <p>Hotels today. Flights, eSIMs and museum passes next.</p>
+  </header>
+  <main>
+    <form id="search">
+      <input name="city" placeholder="Where to? (e.g. Lisbon)" required>
+      <input name="checkIn" type="date">
+      <input name="checkOut" type="date">
+      <input name="guests" type="number" min="1" value="2" aria-label="Guests">
+      <button type="submit">Search hotels</button>
+    </form>
+    <p id="status" role="status"></p>
+    <ul id="results"></ul>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

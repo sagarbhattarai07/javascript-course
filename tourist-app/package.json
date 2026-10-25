@@ -1,0 +1,14 @@
+{
+  "name": "tourist-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tourist super-app: hotels, flights, eSIMs, museum passes via affiliate APIs",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
