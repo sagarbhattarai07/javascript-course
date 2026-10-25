@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getHotelProvider } from './providers/index.js';
+import { applyFilters, parseNumber } from './filters.js';
 
 const PUBLIC_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
@@ -24,7 +25,14 @@ export function createServer() {
           checkOut: url.searchParams.get('checkOut'),
           guests: Number(url.searchParams.get('guests') || 1),
         });
-        return sendJson(res, 200, { hotels });
+        const q = url.searchParams;
+        return sendJson(res, 200, {
+          hotels: applyFilters(hotels, {
+            maxPrice: parseNumber(q.get('maxPrice')),
+            minRating: parseNumber(q.get('minRating')),
+            sort: q.get('sort'),
+          }),
+        });
       } catch (err) {
         return sendJson(res, 500, { error: err.message });
       }

@@ -4,11 +4,12 @@ Each session is sized to fit in ~1 hour. Ship something small and working every 
 
 ## Done
 - **Day 1** – Project scaffold, provider abstraction (mock + Booking stub), hotel search API + UI, test.
+- **Day 1 (extra)** – Price/rating filters and sorting (`server/filters.js`) with tests.
 
 ## Next sessions
 - **Day 2** – Apply for affiliate programs (Booking.com / Awin, Skyscanner, Airalo, GetYourGuide); decide stack (see below).
 - **Day 3** – Implement real hotel provider behind `HOTEL_PROVIDER`; env-based keys.
-- **Day 4** – Hotel results: filters, sorting, images, affiliate link tracking.
+- **Day 4** – Hotel results: images, affiliate link tracking (filters/sorting already done).
 - **Day 5** – Flights provider (same `search()` contract) + UI tab.
 - **Day 6** – eSIM provider (Airalo) + UI tab.
 - **Day 7** – Attractions / museum passes provider.
